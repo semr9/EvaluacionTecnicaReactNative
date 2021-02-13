@@ -4,14 +4,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../Designs/DesignJokes';
 
+const BuildConfig = require('react-native-build-config')
 
 function JokesScreen({navigation}) {
-    
+  //const BuildConfig = require('react-native-build-config')
+  
   const [isLoading, setLoading] = useState(true);
   const [dataValue, setDataValue] = useState([]);
 
   const fetchApi =  () => { 
-    const response =  fetch('http://api.icndb.com/jokes/random',{
+    const response =  fetch('http://api.icndb.com/jokes/random',{//'http://api.icndb.com/jokes/random'
       method: 'GET',
       headers: {
         Accept: 'application/json',
